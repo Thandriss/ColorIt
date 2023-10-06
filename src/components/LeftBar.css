@@ -22,7 +22,7 @@ input[type="text"]
 }
 .colorField {
     width: 5vh;
-    height: 10vh;
+    height: 15vh;
     background: #000000;
     float: right;
     margin-right: 3vh;
@@ -55,7 +55,7 @@ input[type="text"]
 .objectsBar{
     border: 1px solid #7C8184;
     background: #847B7D;
-    width: 40vh;
+    width: 41vh;
     height: 40vh;
     margin: 2vh;
     border-radius: 1vh;

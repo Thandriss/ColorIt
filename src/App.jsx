@@ -1,22 +1,34 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.css'
-
 import LeftBar from './components/LeftBar.jsx'
 import Main from "./components/Main.jsx";
+import React from "react";
+// import React, {useState} from "react";
+class App extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            list: []
+        };
+        this.updateData = this.updateData.bind(this);
+    }
 
-function App() {
-  // const [count, setCount] = useState(0)
-
-  return (
-    <>
-        <div className="background">
-            <LeftBar/>
-            <Main/>
-        </div>
-    </>
-  )
+    updateData = (value) =>{
+        this.setState({
+            list: value
+        })
+        console.log("handle")
+        console.log(value)
+    }
+    render() {
+        return (
+            <>
+                <div className="background">
+                    <LeftBar listOfObjects={this.state.list}/>
+                    <Main updateData={this.updateData}/>
+                </div>
+            </>
+        )
+    }
 }
 
 export default App

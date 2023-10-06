@@ -1,12 +1,16 @@
 import './Main.css'
-import display from "../Display.jsx";
 import React from "react";
+import Display from "../Display.jsx";
 // import axios from "axios";
 export default class Main extends React.Component{
-    state = {
-        selectedFile: null
-    };
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            // selectedFile: [],
+            // objectNames: [],
+        };
+    }
+    objNames;
     onFileChange = event => {
         document.getElementsByClassName("rightBar")[0].style.display = "none";
         // document.getElementsByClassName("rightScreen")[0].style.display = "block";
@@ -14,12 +18,17 @@ export default class Main extends React.Component{
         let byteArray = this.readFileDataAsBase64(files);
         console.log(files)
         console.log(byteArray);
+        let dis = new Display();
         byteArray.then(value => {
             return (
-                <div className="rightScreen" >
-                    <script type={"module"} src={display(value)}></script>
-                </div>
-            );
+                <>
+                    <div className="rightScreen">
+                        <script type={"module"} src={dis.display(value)}></script>
+                        {this.objNames = dis.getNames()}
+                        <script onChange={this.props.updateData(this.objNames)}></script>
+                    </div>
+                </>
+            )
         });
     };
 
@@ -43,7 +52,6 @@ export default class Main extends React.Component{
 
     render() {
         console.log("render")
-
         return (
             <div className="rightBar">
                 <input type={"file"} id="file" className="upload-model" accept=".obj" onChange={this.onFileChange} ></input>
