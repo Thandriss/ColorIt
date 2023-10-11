@@ -1,0 +1,39 @@
+.rightBar {
+    background: white;
+    width: 148vh;
+    height: 100vh;
+    position: relative;
+    left: 50vh;
+    border-radius: 2vh;
+    display: block;
+}
+
+#file {
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+label {
+    background-color: #847B7D ;
+    color: white;
+    width: 30vh;
+    height: 30vh;
+    position: relative;
+    top: 50vh;
+    right: -9vh;
+    margin-top: 40vh;
+    font-size: 3vh;
+    padding: 1vh;
+    border-radius: 1vh;
+}
+.rightScreen {
+    background: white;
+    width: 148vh;
+    height: 100vh;
+    float: right;
+    position: relative;
+    left: 50vh;
+    border-radius: 2vh;
+    display: none;
+}

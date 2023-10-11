@@ -1,0 +1,102 @@
+.colorBar{
+    padding-top: 2vh;
+    padding-left: 1vh;
+    font-size: 25px;
+}
+thead{
+    font-size: 25px;
+}
+td{
+    font-size: 20px;
+}
+.colorNum{
+    margin: 1vh;
+}
+input[type="text"]
+{
+    font-size: 20px;
+    border-radius: 1vh;
+    width: 8vh;
+    position: relative;
+    left: 5vh;
+}
+.colorField {
+    width: 5vh;
+    height: 15vh;
+    background: #000000;
+    float: right;
+    margin-right: 3vh;
+    margin-top: 2vh;
+    border-radius: 1vh;
+}
+.applyButton{
+    width: 7vh;
+    height: 4vh;
+    border-radius: 1vh;
+    position: relative;
+    left: 21vh;
+    color: white;
+    background: #847B7D;
+    border: 1px solid #7C8184;
+    font-size: 18px;
+}
+.genButton{
+    width: 7vh;
+    height: 4vh;
+    border-radius: 1vh;
+    position: relative;
+    left: 21vh;
+    top: 4vh;
+    color: white;
+    background: #847B7D;
+    border: 1px solid #7C8184;
+    font-size: 18px;
+}
+.objectsBar{
+    border: 1px solid #7C8184;
+    background: #847B7D;
+    width: 41vh;
+    height: 40vh;
+    margin: 2vh;
+    border-radius: 1vh;
+    overflow-y:scroll;
+    overflow-x:scroll;
+    position: relative;
+    left: 3vh;
+}
+
+.objectsBar::-webkit-scrollbar {
+    display: none;
+    overflow-x: visible;
+}
+
+.listOfObjects{
+    padding: 1vh;
+    list-style: none;
+}
+
+input{
+    position: relative;
+    /*left: 6vh;*/
+    height: 1.5vh;
+    float: right;
+}
+
+.colorBar{
+    border: 1px solid #7C8184;
+    background: #847B7D;
+    width: 40vh;
+    height: 40vh;
+    border-radius: 1vh;
+    position: relative;
+    top: 2vh;
+    left: 5vh;
+}
+.leftBar {
+    float: left;
+    background: #9B9397;
+    width: 50vh;
+    height: 100vh;
+    border-top-right-radius: 1vh ;
+    border-bottom-right-radius: 1vh;
+}
