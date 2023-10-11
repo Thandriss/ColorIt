@@ -31,6 +31,7 @@ label {
     background: white;
     width: 148vh;
     height: 100vh;
+    float: right;
     position: relative;
     left: 50vh;
     border-radius: 2vh;

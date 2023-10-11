@@ -13,7 +13,6 @@ export default class Main extends React.Component{
     objNames;
     onFileChange = event => {
         document.getElementsByClassName("rightBar")[0].style.display = "none";
-        // document.getElementsByClassName("rightScreen")[0].style.display = "block";
         let files = event.target.files[0];
         let byteArray = this.readFileDataAsBase64(files);
         console.log(files)
