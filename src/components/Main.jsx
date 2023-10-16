@@ -24,7 +24,7 @@ export default class Main extends React.Component{
                     <div className="rightScreen">
                         <script type={"module"} src={dis.display(value)}></script>
                         {this.objNames = dis.getNames()}
-                        <script onChange={this.props.updateData(this.objNames)}></script>
+                        <script onChange={this.props.updateData(this.objNames, value)}></script>
                     </div>
                 </>
             )

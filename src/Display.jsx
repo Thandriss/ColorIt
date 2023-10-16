@@ -44,12 +44,6 @@ class Display {
             }
         });
         this.namesOfObjects = names;
-        // var lb = new LeftBar();
-        // lb.setObjectsName(names)
-        // lb.setState({
-        //     listOfObjects: names,
-        // });
-        // lb.forceUpdate();
         const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444);
         hemiLight.position.set(0, 20, 0);
         scene.add(hemiLight);
