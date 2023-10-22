@@ -1,4 +1,4 @@
-import './LeftBar.css'
+import 'src/components/LeftBar.css'
 import React from "react";
 import applyColors from "../Apply.jsx";
 
@@ -7,10 +7,10 @@ import applyColors from "../Apply.jsx";
 export default class LeftBar extends React.Component{
 
     async getData(){
-        var data = {
-            model : "default",
-            input : ["N","N","N","N","N"]
-        }
+        const data = {
+            model: "default",
+            input: ["N", "N", "N", "N", "N"]
+        };
         try {
             await fetch("http://colormind.io/api/", {
                 method: "POST",

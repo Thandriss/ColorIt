@@ -1,7 +1,5 @@
 import * as THREE from "three";
 import {OBJLoader} from "three/addons/loaders/OBJLoader.js";
-// import LeftBar from "./components/LeftBar.jsx";
-// import THREE.OBJLoader from "https://cdn.jsdelivr.net/npm/three@0.116.1/examples/js/loaders/OBJLoader.js"
 
 class Display {
     namesOfObjects = [];
