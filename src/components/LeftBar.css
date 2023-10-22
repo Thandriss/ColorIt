@@ -1,16 +1,20 @@
 .colorBar{
     padding-top: 2vh;
-    padding-left: 1vh;
+    /*padding-left: 1vh;*/
     font-size: 25px;
 }
 thead{
     font-size: 25px;
 }
 td{
-    font-size: 20px;
+    font-size: 1.7vh;
 }
-.colorNum{
+#colorNum{
     margin: 1vh;
+    color: white;
+}
+.colors {
+    padding: 0.5vh 0.5vh 0.5vh 1.5vh;
 }
 input[type="text"]
 {
@@ -20,28 +24,26 @@ input[type="text"]
     position: relative;
     left: 5vh;
 }
-.colorField {
+#colorField {
     width: 5vh;
     height: 15vh;
     background: #000000;
     float: right;
-    margin-right: 3vh;
+    margin-right: 1vh;
     margin-top: 2vh;
     border-radius: 1vh;
 }
 .applyButton{
-    width: 7vh;
     height: 4vh;
     border-radius: 1vh;
     position: relative;
-    left: 21vh;
+    left: 22vh;
     color: white;
     background: #847B7D;
     border: 1px solid #7C8184;
     font-size: 18px;
 }
 .genButton{
-    width: 7vh;
     height: 4vh;
     border-radius: 1vh;
     position: relative;
