@@ -11,6 +11,10 @@ export default class Main extends React.Component{
         };
     }
     objNames;
+    camers;
+    rend;
+    obj;
+    scen;
     onFileChange = event => {
         document.getElementsByClassName("rightBar")[0].style.display = "none";
         let files = event.target.files[0];
@@ -24,7 +28,12 @@ export default class Main extends React.Component{
                     <div className="rightScreen">
                         <script type={"module"} src={dis.display(value)}></script>
                         {this.objNames = dis.getNames()}
-                        <script onChange={this.props.updateData(this.objNames, value)}></script>
+                        {this.camers = dis.getCamera()}
+                        {this.obj = dis.getObject()}
+                        {this.scen = dis.getScene()}
+                        {this.rend = dis.getRend()}
+                        <script onChange={this.props.updateData(this.objNames, value, this.camers, this.rend, this.obj, this.scen)}></script>
+                        {/*<script onChange={this.props.updateData(this.objNames, value)}></script>*/}
                     </div>
                 </>
             )

@@ -5,8 +5,12 @@ import {OBJLoader} from "three/addons/loaders/OBJLoader.js";
 
 class Display {
     namesOfObjects = [];
+    obj;
+    scn;
+    rend;
+    cmr;
     display(objString) {
-        const renderer = new THREE.WebGLRenderer();
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
         renderer.setSize(window.innerWidth *0.747, window.innerHeight);
         document.body.appendChild(renderer.domElement);
         const scene = new THREE.Scene();
@@ -36,7 +40,9 @@ class Display {
         let loader = new OBJLoader();
         var decObj = decodeURI(objString);
         const object = loader.parse(decObj);
+        this.obj = object;
         var names = [];
+        console.log(typeof renderer);
         scene.add(object);
         object.traverse(function (child) {
             if (child instanceof THREE.Mesh) {
@@ -50,6 +56,9 @@ class Display {
         const dirLight = new THREE.DirectionalLight(0xffffff);
         dirLight.position.set(-3, 10, -10);
         scene.add(dirLight);
+        this.scn = scene;
+        this.rend = renderer;
+        this.cmr = camera;
         const animate = function () {
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
@@ -57,8 +66,22 @@ class Display {
         animate();
     }
     getNames() {
-        console.log(this.namesOfObjects)
         return this.namesOfObjects
+    }
+    getCamera() {
+        return this.cmr
+    }
+    getScene() {
+        // console.log(this.namesOfObjects)
+        return this.scn
+    }
+    getObject() {
+        // console.log(this.namesOfObjects)
+        return this.obj
+    }
+    getRend() {
+        // console.log(this.namesOfObjects)
+        return this.rend
     }
 }
 

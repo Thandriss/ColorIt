@@ -1,5 +1,6 @@
 import './LeftBar.css'
 import React from "react";
+import applyColors from "../Apply.jsx";
 
 // import React from "react";
 
@@ -48,7 +49,7 @@ export default class LeftBar extends React.Component{
                                 {this.props.listOfObjects.map(object =>(
                                     <tr key="1">
                                         <td>{object}</td>
-                                        <td><input type ="text" ></input></td>
+                                        <td><input id="color" type ="text" ></input></td>
                                     </tr>
                                 ))}
                                 <tfoot>
@@ -58,7 +59,8 @@ export default class LeftBar extends React.Component{
                             </table>
                         </ul>
                     </div>
-                    <button className="applyButton" onClick={applyColors(this.props.listOfObjects, this.props.objString)}>Apply</button>
+                    {/*<button className="applyButton" >Apply</button>*/}
+                    <button className="applyButton" onClick={() => applyColors(document.querySelectorAll("[id ='color']"), this.props.objString, this.props.camera, this.props.rend, this.props.obj, this.props.scene)}>Apply</button>
                     <div className="colorBar">
 
                             <table>

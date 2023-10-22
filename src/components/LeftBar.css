@@ -7,14 +7,14 @@ thead{
     font-size: 25px;
 }
 td{
-    font-size: 20px;
+    font-size: 1.7vh;
 }
 #colorNum{
     margin: 1vh;
     color: white;
 }
 .colors {
-    padding: 3vh;
+    padding: 0.5vh 0.5vh 0.5vh 1.5vh;
 }
 input[type="text"]
 {
@@ -25,7 +25,7 @@ input[type="text"]
     left: 5vh;
 }
 #colorField {
-    width: 6vh;
+    width: 5vh;
     height: 15vh;
     background: #000000;
     float: right;
