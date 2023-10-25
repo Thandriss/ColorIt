@@ -7,6 +7,7 @@ import applyColors from "../Apply.jsx";
 export default class LeftBar extends React.Component{
 
     async getData(){
+        console.log('upload');
         const data = {
             model: "default",
             input: ["N", "N", "N", "N", "N"]
@@ -17,7 +18,6 @@ export default class LeftBar extends React.Component{
                 body: JSON.stringify(data)
             }).then((response) => response.json())
                 .then(async (json) => {
-                    console.log(json.result)
                     for (let i = 0; i !== json.result.length; i++) {
                         let name = "colorNum" + (i + 1);
                         let field = "colorField" + (i + 1);
