@@ -1,6 +1,7 @@
 import * as THREE from "three";
 // import {OBJLoader} from "three/addons/loaders/OBJLoader.js";
 function applyColors(colorsList, objString, camera, rend, obj, scene) {
+    console.log('upload');
     console.log(objString);
     console.log(colorsList);
     // const renderer = new THREE.WebGLRenderer();

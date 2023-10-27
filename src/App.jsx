@@ -1,7 +1,7 @@
 import './App.css'
-import LeftBar from './components/LeftBar.jsx'
-import Main from "./components/Main.jsx";
 import React from "react";
+import LeftBar from "./components/LeftBar.jsx";
+import Main from "./components/Main.jsx";
 // import React, {useState} from "react";
 class App extends React.Component{
     constructor(props) {
@@ -34,7 +34,6 @@ class App extends React.Component{
         return (
             <>
                 <div className="background">
-                    {/*<LeftBar listOfObjects={this.state.list}/>*/}
                     <LeftBar listOfObjects={this.state.list} objString={this.state.objString} camera={this.state.camera} rend={this.state.rend} obj={this.state.obj} scene={this.state.scene}/>
                     <Main updateData={this.updateData}/>
                 </div>

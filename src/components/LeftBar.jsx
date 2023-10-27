@@ -1,23 +1,23 @@
-import './LeftBar.css'
+import "./LeftBar.css"
 import React from "react";
 import applyColors from "../Apply.jsx";
 
-// import React from "react";
+
 
 export default class LeftBar extends React.Component{
 
     async getData(){
-        var data = {
-            model : "default",
-            input : ["N","N","N","N","N"]
-        }
+        console.log('upload');
+        const data = {
+            model: "default",
+            input: ["N", "N", "N", "N", "N"]
+        };
         try {
             await fetch("http://colormind.io/api/", {
                 method: "POST",
                 body: JSON.stringify(data)
             }).then((response) => response.json())
                 .then(async (json) => {
-                    console.log(json.result)
                     for (let i = 0; i !== json.result.length; i++) {
                         let name = "colorNum" + (i + 1);
                         let field = "colorField" + (i + 1);
@@ -47,10 +47,7 @@ export default class LeftBar extends React.Component{
 
                                 </tbody>
                                 {this.props.listOfObjects.map(object =>(
-                                    <tr key="1">
-                                        <td>{object}</td>
-                                        <td><input id="color" type ="text" ></input></td>
-                                    </tr>
+                                    <tr key="1"><td>{object}</td><td><input id="color" type ="text"></input></td></tr>
                                 ))}
                                 <tfoot>
                                 <tr>
@@ -59,7 +56,6 @@ export default class LeftBar extends React.Component{
                             </table>
                         </ul>
                     </div>
-                    {/*<button className="applyButton" >Apply</button>*/}
                     <button className="applyButton" onClick={() => applyColors(document.querySelectorAll("[id ='color']"), this.props.objString, this.props.camera, this.props.rend, this.props.obj, this.props.scene)}>Apply</button>
                     <div className="colorBar">
 
@@ -78,11 +74,11 @@ export default class LeftBar extends React.Component{
                                     </tr>
                                     </tbody>
                                     <tr>
-                                        <td id={"colorNum"} className="colorNum1">text</td>
-                                        <td id={"colorNum"} className="colorNum2">text</td>
-                                        <td id={"colorNum"} className="colorNum3">text</td>
-                                        <td id={"colorNum"} className="colorNum4">text</td>
-                                        <td id={"colorNum"} className="colorNum5">text</td>
+                                        <td data-testid= "el" id={"colorNum"} className="colorNum1">text</td>
+                                        <td data-testid= "el" id={"colorNum"} className="colorNum2">text</td>
+                                        <td data-testid= "el" id={"colorNum"} className="colorNum3">text</td>
+                                        <td data-testid= "el" id={"colorNum"} className="colorNum4">text</td>
+                                        <td data-testid= "el" id={"colorNum"} className="colorNum5">text</td>
                                     </tr>
                                     <tfoot>
                                     <tr>
@@ -91,7 +87,7 @@ export default class LeftBar extends React.Component{
                                 </div>
                             </table>
                     </div>
-                    <button className="genButton" onClick={this.getData}>Generate</button>
+                    <button role="gen" className="genButton" onClick={this.getData}>Generate</button>
                 </div>
             </>
         )
