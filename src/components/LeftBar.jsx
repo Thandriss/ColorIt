@@ -3,7 +3,6 @@ import React from "react";
 import applyColors from "../Apply.jsx";
 
 
-
 export default class LeftBar extends React.Component{
 
     async getData(){
