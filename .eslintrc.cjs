@@ -17,6 +17,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     "react/jsx-filename-extension": [0],
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "react/prop-types": "off"
   },
 }

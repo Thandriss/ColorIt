@@ -9,6 +9,7 @@ export default class Main extends React.Component{
             // selectedFile: [],
             // objectNames: [],
         };
+        // this.updateData = this.props.updateData
     }
     objNames;
     camers;

@@ -2,8 +2,8 @@ import './App.css'
 import React from "react";
 import LeftBar from "./components/LeftBar.jsx";
 import Main from "./components/Main.jsx";
-// import React, {useState} from "react";
-class App extends React.Component{
+
+export default class App extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -42,4 +42,4 @@ class App extends React.Component{
     }
 }
 
-export default App
+

@@ -86,6 +86,7 @@ input{
 
 .colorBar{
     border: 1px solid #7C8184;
+    padding: 1vh;
     background: #847B7D;
     width: 40vh;
     height: 40vh;

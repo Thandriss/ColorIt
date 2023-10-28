@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "vite",
+    "start": "react-scripts start src/index.js",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "test": "jest ./src/App.test.jsx",
@@ -16,14 +16,14 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
-    "axios": "^1.5.1",
-    "bootstrap": "^5.3.2",
     "esm": "^3.2.25",
     "jest": "^29.7.0",
     "msw": "^2.0.0",
     "node-fetch": "^2.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
+    "react-scripts": "5.0.1",
     "three": "^0.156.1"
   },
   "jest": {
@@ -91,5 +91,17 @@
   ],
   "externals": {
     "react": "React"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
