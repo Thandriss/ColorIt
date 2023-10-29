@@ -60,6 +60,7 @@
     "esbuild": "^0.19.5",
     "esbuild-jest": "^0.5.0",
     "eslint": "^8.45.0",
+    "postcss": "^8.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
@@ -93,9 +94,6 @@
     "mjs",
     "css"
   ],
-  "overrides": {
-    "react-refresh": "^0.12.0"
-  },
   "externals": {
     "react": "React"
   },
