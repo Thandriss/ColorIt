@@ -7,22 +7,18 @@ export default class LeftBar extends React.Component{
 
     async getData(){
         console.log('upload');
-        const data = {
-            model: "default",
-            input: ["N", "N", "N", "N", "N"]
-        };
         try {
-            await fetch("http://colormind.io/api/", {
-                method: "POST",
-                body: JSON.stringify(data)
+            await fetch("https://www.thecolorapi.com/scheme?hex=0047AB&format=json&mode=analogic&count=5", {
+                method: "GET",
             }).then((response) => response.json())
                 .then(async (json) => {
-                    for (let i = 0; i !== json.result.length; i++) {
+                    const colors = json.colors.map(color => color.hex.value);
+                    for (let i = 0; i !== colors.length; i++) {
                         let name = "colorNum" + (i + 1);
                         let field = "colorField" + (i + 1);
-                        let hex = "#" + (1 << 24 | json.result[i][0] << 16 | json.result[i][1] << 8 | json.result[i][2]).toString(16).slice(1);
-                        document.getElementsByClassName(name.toString())[0].innerHTML = hex;
-                        document.getElementsByClassName(field.toString())[0].style.background = hex;
+                        // let hex = "#" + (1 << 24 | json.result[i][0] << 16 | json.result[i][1] << 8 | json.result[i][2]).toString(16).slice(1);
+                        document.getElementsByClassName(name.toString())[0].innerHTML = colors[i];
+                        document.getElementsByClassName(field.toString())[0].style.background = colors[i];
                     }
                 });
         } catch (error) {
