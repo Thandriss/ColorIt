@@ -7,8 +7,15 @@ export default class LeftBar extends React.Component{
 
     async getData(){
         console.log('upload');
+        let len = 6;
+        let output = '';
+        for (let i = 0; i < len; ++i) {
+            output += (Math.floor(Math.random() * 16)).toString(16);
+        }
+        let hex =output.toUpperCase();
+        console.log(hex)
         try {
-            await fetch("https://www.thecolorapi.com/scheme?hex=0047AB&format=json&mode=analogic&count=5", {
+            await fetch("https://www.thecolorapi.com/scheme?hex="+hex +"&format=json&mode=analogic&count=5", {
                 method: "GET",
             }).then((response) => response.json())
                 .then(async (json) => {
@@ -16,7 +23,6 @@ export default class LeftBar extends React.Component{
                     for (let i = 0; i !== colors.length; i++) {
                         let name = "colorNum" + (i + 1);
                         let field = "colorField" + (i + 1);
-                        // let hex = "#" + (1 << 24 | json.result[i][0] << 16 | json.result[i][1] << 8 | json.result[i][2]).toString(16).slice(1);
                         document.getElementsByClassName(name.toString())[0].innerHTML = colors[i];
                         document.getElementsByClassName(field.toString())[0].style.background = colors[i];
                     }
@@ -25,7 +31,6 @@ export default class LeftBar extends React.Component{
             console.error("Error:", error);
         }
     }
-
 
     render() {
         return (
