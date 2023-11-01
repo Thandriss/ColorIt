@@ -31,6 +31,57 @@ export default class LeftBar extends React.Component{
             console.error("Error:", error);
         }
     }
+    check()
+    {
+        let checkboxes = document.getElementsByClassName("modeButton");
+        let choosen = 0;
+        for(let i = 0; i < checkboxes.length; i++)
+        {
+            if(checkboxes[i].checked === true)
+            {
+                choosen = i;
+            }
+        }
+        for(let i = 0; i < checkboxes.length; i++)
+        {
+            if(i !== choosen)
+            {
+                checkboxes[i].checked = false
+            }
+        }
+        let falseCheck = false;
+        checkboxes = document.getElementsByClassName("modeButton");
+        for(let i = 0; i < checkboxes.length; i++)
+        {
+            if(checkboxes[i].checked === false)
+            {
+                falseCheck = false;
+            }
+            else {
+                falseCheck = true;
+            }
+        }
+        if (!falseCheck) {
+            checkboxes[0].checked = true;
+        }
+        checkboxes = document.getElementsByClassName("modeButton");
+        for(let i = 0; i < checkboxes.length; i++)
+        {
+            if(checkboxes[i].checked === true)
+            {
+                choosen = i;
+            }
+        }
+        for(let i = 0; i < checkboxes.length; i++)
+        {
+            if(i !== choosen)
+            {
+                checkboxes[i].checked = false
+            }
+        }
+        // //set checked of clicked object
+        // input.checked = input.checked !== true;
+    }
 
     render() {
         return (
@@ -80,12 +131,31 @@ export default class LeftBar extends React.Component{
                                         <td data-testid= "el" id={"colorNum"} className="colorNum4">text</td>
                                         <td data-testid= "el" id={"colorNum"} className="colorNum5">text</td>
                                     </tr>
+
                                     <tfoot>
                                     <tr>
                                     </tr>
                                     </tfoot>
                                 </div>
                             </table>
+                        <div>
+                            <table>
+                                <thead>
+                                Mode
+                                </thead>
+                                <body>
+                                <div>
+                                    <tr>
+                                        <td><label className="mode"><input type="checkbox" className="modeButton" defaultChecked={true} onClick={() =>this.check(this)}/>analogic</label></td>
+                                        <td><label className="mode"><input type="checkbox" className="modeButton" onClick={() =>this.check(this)}/>complement</label></td>
+                                        <td><label className="mode"><input type="checkbox" className="modeButton" onClick={() =>this.check(this)}/>triad</label></td>
+                                        <td><label className="mode"><input type="checkbox" className="modeButton" onClick={() =>this.check(this)}/>quad</label></td>
+                                        <td><label className="mode"><input type="checkbox" className="modeButton" onClick={() =>this.check(this)}/>monochrome</label></td>
+                                    </tr>
+                                </div>
+                                </body>
+                            </table>
+                        </div>
                     </div>
                     <button role="gen" className="genButton" onClick={this.getData}>Generate</button>
                 </div>
