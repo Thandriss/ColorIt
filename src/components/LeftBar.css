@@ -4,7 +4,7 @@ thead {
 .colorBar{
     padding-top: 2vh;
     /*padding-left: 1vh;*/
-    font-size: 25px;
+    font-size: 20px;
 }
 td{
     font-size: 1.7vh;
@@ -29,7 +29,7 @@ input[type="text"]
     height: 15vh;
     background: #000000;
     float: right;
-    margin-right: 1vh;
+    margin-right: 2.3vh;
     margin-top: 2vh;
     border-radius: 1vh;
 }
@@ -102,4 +102,10 @@ input{
     height: 100vh;
     border-top-right-radius: 1vh ;
     border-bottom-right-radius: 1vh;
+}
+.modeButton{
+    margin-left: 3px;
+}
+.mode{
+    margin-left: 1px;
 }
