@@ -5,6 +5,7 @@ import applyColors from "../Apply.jsx";
 
 export default class LeftBar extends React.Component{
 
+
     async getData(){
         console.log('upload');
         let len = 6;
@@ -13,9 +14,11 @@ export default class LeftBar extends React.Component{
             output += (Math.floor(Math.random() * 16)).toString(16);
         }
         let hex =output.toUpperCase();
-        console.log(hex)
+        let selector = document.getElementById("selectMode");
+        let num = selector.options[selector.selectedIndex].text;
+        console.log(num);
         try {
-            await fetch("https://www.thecolorapi.com/scheme?hex="+hex +"&format=json&mode=analogic&count=5", {
+            await fetch("https://www.thecolorapi.com/scheme?hex="+ hex +"&format=json&mode="+num+"&count=5", {
                 method: "GET",
             }).then((response) => response.json())
                 .then(async (json) => {
@@ -31,6 +34,7 @@ export default class LeftBar extends React.Component{
             console.error("Error:", error);
         }
     }
+
 
     render() {
         return (
@@ -80,12 +84,33 @@ export default class LeftBar extends React.Component{
                                         <td data-testid= "el" id={"colorNum"} className="colorNum4">text</td>
                                         <td data-testid= "el" id={"colorNum"} className="colorNum5">text</td>
                                     </tr>
+
                                     <tfoot>
                                     <tr>
                                     </tr>
                                     </tfoot>
                                 </div>
                             </table>
+                        <div>
+                            <table>
+                                <thead>
+                                Mode
+                                </thead>
+                                <body>
+                                <div>
+                                    <tr>
+                                        <select id="selectMode" defaultValue="mode1" multiple={false} >
+                                            <option value="mode1">analogic</option>
+                                            <option value="mode2">complement</option>
+                                            <option value="mode3">triad</option>
+                                            <option value="mode4">quad</option>
+                                            <option value="mode5">monochrome</option>
+                                        </select>
+                                    </tr>
+                                </div>
+                                </body>
+                            </table>
+                        </div>
                     </div>
                     <button role="gen" className="genButton" onClick={this.getData}>Generate</button>
                 </div>
