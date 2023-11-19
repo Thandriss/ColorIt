@@ -5,6 +5,7 @@ import applyColors from "../Apply.jsx";
 
 export default class LeftBar extends React.Component{
 
+
     async getData(){
         console.log('upload');
         let len = 6;
@@ -13,9 +14,11 @@ export default class LeftBar extends React.Component{
             output += (Math.floor(Math.random() * 16)).toString(16);
         }
         let hex =output.toUpperCase();
-        console.log(hex)
+        let selector = document.getElementById("selectMode");
+        let num = selector.options[selector.selectedIndex].text;
+        console.log(num);
         try {
-            await fetch("https://www.thecolorapi.com/scheme?hex="+hex +"&format=json&mode=analogic&count=5", {
+            await fetch("https://www.thecolorapi.com/scheme?hex="+ hex +"&format=json&mode="+num+"&count=5", {
                 method: "GET",
             }).then((response) => response.json())
                 .then(async (json) => {
@@ -31,57 +34,7 @@ export default class LeftBar extends React.Component{
             console.error("Error:", error);
         }
     }
-    check()
-    {
-        let checkboxes = document.getElementsByClassName("modeButton");
-        let choosen = 0;
-        for(let i = 0; i < checkboxes.length; i++)
-        {
-            if(checkboxes[i].checked === true)
-            {
-                choosen = i;
-            }
-        }
-        for(let i = 0; i < checkboxes.length; i++)
-        {
-            if(i !== choosen)
-            {
-                checkboxes[i].checked = false
-            }
-        }
-        let falseCheck = false;
-        checkboxes = document.getElementsByClassName("modeButton");
-        for(let i = 0; i < checkboxes.length; i++)
-        {
-            if(checkboxes[i].checked === false)
-            {
-                falseCheck = false;
-            }
-            else {
-                falseCheck = true;
-            }
-        }
-        if (!falseCheck) {
-            checkboxes[0].checked = true;
-        }
-        checkboxes = document.getElementsByClassName("modeButton");
-        for(let i = 0; i < checkboxes.length; i++)
-        {
-            if(checkboxes[i].checked === true)
-            {
-                choosen = i;
-            }
-        }
-        for(let i = 0; i < checkboxes.length; i++)
-        {
-            if(i !== choosen)
-            {
-                checkboxes[i].checked = false
-            }
-        }
-        // //set checked of clicked object
-        // input.checked = input.checked !== true;
-    }
+
 
     render() {
         return (
@@ -146,11 +99,13 @@ export default class LeftBar extends React.Component{
                                 <body>
                                 <div>
                                     <tr>
-                                        <td><label className="mode"><input type="checkbox" className="modeButton" defaultChecked={true} onClick={() =>this.check(this)}/>analogic</label></td>
-                                        <td><label className="mode"><input type="checkbox" className="modeButton" onClick={() =>this.check(this)}/>complement</label></td>
-                                        <td><label className="mode"><input type="checkbox" className="modeButton" onClick={() =>this.check(this)}/>triad</label></td>
-                                        <td><label className="mode"><input type="checkbox" className="modeButton" onClick={() =>this.check(this)}/>quad</label></td>
-                                        <td><label className="mode"><input type="checkbox" className="modeButton" onClick={() =>this.check(this)}/>monochrome</label></td>
+                                        <select id="selectMode" defaultValue="mode1" multiple={false} >
+                                            <option value="mode1">analogic</option>
+                                            <option value="mode2">complement</option>
+                                            <option value="mode3">triad</option>
+                                            <option value="mode4">quad</option>
+                                            <option value="mode5">monochrome</option>
+                                        </select>
                                     </tr>
                                 </div>
                                 </body>
