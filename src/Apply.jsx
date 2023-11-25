@@ -33,10 +33,7 @@ function applyColors(colorsList, objString, camera, rend, obj, scene) {
         }
     }
     console.log(listConverted);
-    // for (let i = 0; i <colorsList.length; i++) {
-    //     let elem = object.getObjectByName(name[i]);
-    //     elem.material.color.setHex(listConverted[i]);
-    // }
+
     let i = 0;
     obj.traverse((child) => {
         if (child.material) {
