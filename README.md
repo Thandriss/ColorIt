@@ -1,6 +1,6 @@
 # ColorIT
 
-
+Link: https://thandriss-app-efec2d3b9c51.herokuapp.com/
 Steps for usage:
 
 ![img](./images/first_scrren.png)
