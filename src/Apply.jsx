@@ -39,7 +39,6 @@ function applyColors(colorsList, objString, camera, rend, obj, scene) {
         if (child.material) {
             console.log(child.name);
             obj.getObjectByName(child.name).material.color.set(listConverted[i]);
-            // setColor(listConverted[i]);
             i++;
         }
     });
