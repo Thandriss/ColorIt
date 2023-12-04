@@ -34,3 +34,4 @@ If you want to clone and edite the code, be sure that Node.js and npm is install
 3. Run the application with command
 
    'npm start'
+You can see the running application by address http://localhost:3000/ in the browser
