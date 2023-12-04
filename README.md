@@ -16,3 +16,21 @@ Moreover, after pressing the "Generate" button, 5 matching colors will appear on
 **!TIP: You can rotate the model with button up, down, left and right. Files for checking you can get from the files folder in my repository** 
 
 **!TIP:In networks in my github you can see a lot of commits directly in main branch, it is because I had some problems with deployment**
+
+## Tech Stack
+* React
+* Three.js
+* Node.js
+* JavaScript
+
+If you want to clone and edite the code, be sure that Node.js and npm is installed on your PC. 
+
+## Run the project
+
+1. Clone the repository
+2. Set up its dependencies by running the package.json file with the command
+
+   'npm install'
+3. Run the application with command
+
+   'npm start'
